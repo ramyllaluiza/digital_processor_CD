@@ -1,0 +1,13 @@
+entity mux2x1 is
+port(i0, i1, s0 : in bit;
+		d : out bit);
+end mux2x1;
+
+architecture behav of mux2x1 is
+begin
+	
+	with s0 select
+		d <= i0 when '0',
+		i1 when '1';
+	
+end architecture behav;

@@ -1,0 +1,12 @@
+entity fullAdd is
+port(a, b, cin : in bit;
+		s, co : out bit);
+end fullAdd;
+
+architecture behav of fullAdd is
+begin
+	
+	s <= (a and b and cin) or (not a and not b and cin) or (not a and b and not cin) or (a and not b and not cin);
+	co <= (b and cin) or (a and cin) or (a and b);
+	
+end architecture behav;
